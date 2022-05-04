@@ -1,0 +1,179 @@
+@import "./theme-variables";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: $primary-font;
+  background-color: $primary-color;
+  color: $secondary-color;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeSpeed;
+}
+
+// Avoid text overflows
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p{
+  overflow-wrap: break-word;
+}
+
+@for $i from 1 through length($heading-sizes) {
+  $size: nth($heading-sizes, $i);
+  h#{$i} {
+    font-size: $size;
+    margin: 5px 0;
+  }
+}
+
+p, input[type="text"],
+input[type="password"],
+input[type="button"],
+input[type="submit"] {
+  font-size: $paragraph-size;
+
+  &::placeholder {
+    opacity: 0.5;
+  }
+}
+
+textarea {
+  white-space: revert;
+  font-size: 1rem;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+.weight-bold{
+  font-weight: 700;
+}
+.weight-regular{
+  font-weight: 400;
+}
+
+img,
+picture,
+video,
+canvas,
+svg,
+iframe {
+  display: block;
+  max-width: 100%;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex] {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+ul {
+  list-style: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  outline: none;
+}
+
+strong {
+  font-weight: bolder;
+}
+
+:where(button, [type='button' i], [type='reset' i], [type='submit' i]) {
+  -webkit-appearance: button;
+}
+
+small {
+  font-size: 80%;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  caption-side: bottom;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.container {
+  width: 100%;
+  padding: 0 15%;
+  min-height: 100vh;
+  height: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &-wrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+img.icon{
+  color: red;
+}
