@@ -1,29 +1,35 @@
 import './App.scss';
-import Weather from "./components/WeatherCard";
+import WeatherCard from "./components/WeatherCard";
 import {createContext, useEffect, useState} from "react";
 import {Context} from "./context";
+import Preloader from "./components/Preloader";
+import {API_KEY} from "./enviroment/enviroment";
 
 
-async function getData() {
-    const url = 'http://api.openweathermap.org/data/2.5/forecast?q=Otyniya&id=524901&appid=4f9c962da9dd7619846b387bd4b78c79';
-
-    return await fetch(url)
-        .then(response => {
-            return response.json();
-        })
-        .catch(error => {
-            console.error(error);
-        });
-}
 
 function App() {
     const [data, setData] = useState({});
     const [isLoading, setLoading] = useState(true);
+
     useEffect(() => {
-        getData().then(res => setData({res}));
-    }, [])
+        const url = `http://api.openweathermap.org/data/2.5/forecast?q=Otyniya&id=524901&units=metric&appid=${API_KEY}`;
+
+        const fetchData = async () => {
+            try {
+                const response = await fetch(url);
+                const json = await response.json();
+                setData(json);
+                setLoading(false);
+            } catch (error) {
+                console.log("error", error);
+            }
+        };
+
+        fetchData();
+    }, []);
 
     // Check in data is parsed
+    console.log(isLoading)
     if(data !== undefined && Object.keys(data).length !== 0){
         console.log(data);
     }
@@ -32,7 +38,7 @@ function App() {
         <Context.Provider value={{data, isLoading}}>
             <div className="container">
                 <div className="container-wrap">
-                    <Weather/>
+                    {isLoading ? <Preloader/> : <WeatherCard/>}
                 </div>
             </div>
         </Context.Provider>
