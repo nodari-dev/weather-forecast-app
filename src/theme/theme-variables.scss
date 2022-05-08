@@ -1,14 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Radio+Canada:wght@400;500;700&display=swap');
-
-$heading-sizes: 3.5rem, 2.17rem, 1.83rem, 1.67rem, 1.08rem, 0.92rem;
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;600&display=swap');
+$heading-sizes: 5rem, 2.17rem, 1.83rem, 1.67rem, 1.08rem, 0.92rem;
 $paragraph-size: 1.08rem;
 
-$primary-font: 'Radio Canada', sans-serif;
-$primary-color: #E2EAF3;
-$secondary-color: #2F3644;
-
-$text-color: #838BAA;
-$white-color: #ffffff;
+$primary-font: 'Source Sans Pro', sans-serif;
+$primary-color: #696868;
+$secondary-color: #242424;
 
 $white-blur: rgba(255, 255, 255, 0.7);
 $white-blur-min: rgba(255, 255, 255, 0.3);

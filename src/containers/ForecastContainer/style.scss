@@ -1,0 +1,8 @@
+.week-forecast{
+  display: flex;
+  align-items: center;
+
+  & li{
+    margin: 0 50px;
+  }
+}

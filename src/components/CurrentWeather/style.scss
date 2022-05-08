@@ -1,0 +1,37 @@
+@import "./src/theme/theme-variables.scss";
+
+.current-weather{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 70px 0;
+
+  &-temperature{
+    margin: 0 100px;
+
+    & h1{
+      color:$secondary-color;
+    }
+  }
+
+  &-additional-info{
+
+    &-list{
+
+      & li{
+        display: flex;
+
+        & img{
+          width: 30px;
+        }
+
+        & span{
+          display: flex;
+          align-items: center;
+
+        }
+      }
+    }
+  }
+}

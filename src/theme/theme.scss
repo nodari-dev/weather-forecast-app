@@ -16,8 +16,7 @@ html,
 body {
   height: 100%;
   font-family: $primary-font;
-  background-color: $primary-color;
-  color: $secondary-color;
+  color: $primary-color;
 }
 
 body {
@@ -36,6 +35,7 @@ h5,
 h6,
 p{
   overflow-wrap: break-word;
+  font-weight: 400;
 }
 
 @for $i from 1 through length($heading-sizes) {
@@ -65,13 +65,6 @@ textarea {
 ul[role='list'],
 ol[role='list'] {
   list-style: none;
-}
-
-.weight-bold{
-  font-weight: 700;
-}
-.weight-regular{
-  font-weight: 400;
 }
 
 img,
@@ -115,6 +108,7 @@ textarea,
 select {
   font: inherit;
   outline: none;
+  border:none;
 }
 
 strong {
@@ -169,11 +163,8 @@ table {
   &-wrap {
     width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-}
-
-img.icon{
-  color: red;
 }
