@@ -6,10 +6,10 @@
   justify-content: center;
 
   &-input{
-    text-align: center;
-    max-width: 50px;
+    width: 15px;
+    max-width: 300px;
     font-size: 1.83rem !important;
-    font-weight: 600;
+    color: $secondary-color;
     border-bottom: 1px solid $primary-color;
   }
 }
